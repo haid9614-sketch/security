@@ -40,4 +40,26 @@ public class ProductController {
         productService.addProduct(newProduct);
         return "da them san pham thanh cong";
     }
+    // http://localhost:8080/api/product/name/description?key=iphone
+    @GetMapping("/name/description")
+    public List<Product> searchByNameAnhDescription(@RequestParam(name = "key") String key) {
+        return productService.searchByNameOrDescription(key);
+    }
+    // http://localhost:8080/api/product/stock
+    @GetMapping("/stock")
+    public List<Product> filterByStock() {
+        return productService.filterByStock();
+    }
+    // http://localhost:8080/api/product/price/top5
+    @GetMapping("price/top5")
+    public List<Product> top5byPrice() {
+        return productService.top5Byprice();
+    }
+    // http://localhost:8080/api/product/stock/delete
+    @DeleteMapping("/stock/delete")
+    public String deleteByStock() {
+        productService.deleteByStock();
+        return "Da xoa san pham khong kha dung";
+    }
+
 }

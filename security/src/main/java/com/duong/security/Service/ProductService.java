@@ -27,4 +27,16 @@ public class ProductService {
     public Long kiemTraTonKho() {
         return productRepository.countByIsActiveTrue();
     }
+    public List<Product> searchByNameOrDescription(String name) {
+        return productRepository.searchBynameAndDescription(name);
+    }
+    public List<Product> filterByStock() {
+        return productRepository.filterbyStock();
+    }
+    public List<Product> top5Byprice() {
+        return productRepository.top5byPrice();
+    }
+    public void deleteByStock() {
+        productRepository.deleteProductbyStock();
+    }
 }
