@@ -1,7 +1,11 @@
 package com.duong.security.controller;
 import com.duong.security.Entity.Product;
 import com.duong.security.Service.ProductService;
+import com.duong.security.requestDTO.AddProduct;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
@@ -36,9 +40,9 @@ public class ProductController {
     }
     //  http://localhost:8080/api/product
     @PostMapping
-    public String addProduct(@RequestBody Product newProduct) {
-        productService.addProduct(newProduct);
-        return "da them san pham thanh cong";
+    public ResponseEntity<?> addProduct(@Valid @RequestBody AddProduct addProduct, BindingResult bindingResult) {
+        return productService.addProduct(addProduct, bindingResult);
+
     }
     // http://localhost:8080/api/product/name/description?key=iphone
     @GetMapping("/name/description")
