@@ -13,17 +13,17 @@ public class SecurityApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SecurityApplication.class, args);
 	}
-	@Bean
-	public CommandLineRunner testRegister(AuthService authService) {
-		return args -> {
-			System.out.println("--- TIẾN HÀNH ĐĂNG KÝ USER THỬ NGHIỆM ---");
-
-			// Thử tạo một tài khoản tên là "duongit" với mật khẩu "biemat123"
-			authService.registerUser("duongit", "biemat123");
-
-			System.out.println("--- ĐÃ LƯU XUỐNG DATABASE! KIỂM TRA MYSQL WORKBENCH NHÉ ---");
-		};
-	}
+//	@Bean
+//	public CommandLineRunner testRegister(AuthService authService) {
+//		return args -> {
+//			System.out.println("--- TIẾN HÀNH ĐĂNG KÝ USER THỬ NGHIỆM ---");
+//
+//			// Thử tạo một tài khoản tên là "duongit" với mật khẩu "biemat123"
+//			authService.registerUser("duongit", "biemat123");
+//
+//			System.out.println("--- ĐÃ LƯU XUỐNG DATABASE! KIỂM TRA MYSQL WORKBENCH NHÉ ---");
+//		};
+//	}
 
 
 //	@Bean

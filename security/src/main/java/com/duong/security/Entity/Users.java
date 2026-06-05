@@ -19,6 +19,8 @@ public class Users {
     private String userName;
     @Column(name = "password")
     private String password;
+    @Column(name = "email")
+    private String email;
     @Column(name = "role")
     private String role;
 }

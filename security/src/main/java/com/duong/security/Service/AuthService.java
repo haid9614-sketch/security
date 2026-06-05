@@ -21,7 +21,7 @@ public class AuthService {
         Users newUser = new Users();
         newUser.setUserName(userName);
         newUser.setPassword(hashedPass);
-        newUser.setRole("ROLE_USER");
+        newUser.setRole("USER");
 
         return usersRepository.save(newUser);
     }
